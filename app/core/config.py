@@ -6,6 +6,10 @@ MAX_SYMBOLS_NAME = 100
 MAX_TIME_OF_ACTION_JWT = 3600
 MIN_LENGHT = 1
 NO_INVESTED = 0
+FORMAT = "%Y/%m/%d %H:%M:%S"
+ROW = 100
+COLUMN = 3
+SHEET_ID = 0
 
 
 class Settings(BaseSettings):

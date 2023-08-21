@@ -1,6 +1,6 @@
-from typing import Optional, List, Dict
+from typing import Dict, List, Optional
 
-from sqlalchemy import select, func
+from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.crud.base import CRUDBase
@@ -26,7 +26,7 @@ class CRUDCharityProject(CRUDBase[
         )
         db_room_id = db_room_id.scalars().first()
         return db_room_id
-    
+
     async def get_projects_by_completion_rate(
             self,
             session: AsyncSession,

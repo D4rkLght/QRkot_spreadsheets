@@ -44,7 +44,7 @@ class CRUDCharityProject(CRUDBase[
                 'collection_time': project.close_date - project.create_date,
                 'description': project.description
             })
-        return projects
+        return sorted(projects, key=lambda x: x['collection_time'])
 
 
 charityproject_crud = CRUDCharityProject(CharityProject)

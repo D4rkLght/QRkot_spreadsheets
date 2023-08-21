@@ -1,6 +1,6 @@
-from typing import Optional
+from typing import Optional, List, Dict
 
-from sqlalchemy import select
+from sqlalchemy import select, func
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.crud.base import CRUDBase
@@ -26,6 +26,25 @@ class CRUDCharityProject(CRUDBase[
         )
         db_room_id = db_room_id.scalars().first()
         return db_room_id
+    
+    async def get_projects_by_completion_rate(
+            self,
+            session: AsyncSession,
+    ) -> List[Dict[str, int]]:
+        charity_projects = await session.execute(
+            select(CharityProject).where(
+                CharityProject.fully_invested
+            )
+        )
+        charity_projects = charity_projects.scalars().all()
+        projects = []
+        for project in charity_projects:
+            projects.append({
+                'name': project.name,
+                'collection_time': project.close_date - project.create_date,
+                'description': project.description
+            })
+        return projects
 
 
 charityproject_crud = CRUDCharityProject(CharityProject)

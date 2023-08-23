@@ -1,10 +1,10 @@
-## Alembic is a database migrations tool written by the author of SQLAlchemy. A migrations tool offers the following functionality:
+Alembic is a database migrations tool written by the author of SQLAlchemy. A migrations tool offers the following functionality:
 
 * Can emit ALTER statements to a database in order to change the structure of tables and other constructs
 * Provides a system whereby "migration scripts" may be constructed; each script indicates a particular series of steps that can "upgrade" a target database to a new version, and optionally a series of steps that can "downgrade" similarly, doing the same steps in reverse.
 * Allows the scripts to execute in some sequential manner.
 
-## Основные команды alembic
+Основные команды alembic:
 * alembic init alembic
 * alembic init db-migration / alembic init -t async migrations
 * alembic upgrade head

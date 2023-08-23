@@ -39,7 +39,7 @@ async def create_donation(
 async def get_all_donations(
     session: AsyncSession = Depends(get_async_session),
 ):
-    '''Только для суперюзеров.'''
+    """Только для суперюзеров."""
     return await donation_crud.get_multi(session)
 
 

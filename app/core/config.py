@@ -10,6 +10,7 @@ FORMAT = "%Y/%m/%d %H:%M:%S"
 ROW = 100
 COLUMN = 3
 SHEET_ID = 0
+PASSWORD_MIN_LENGHT = 3
 
 
 class Settings(BaseSettings):

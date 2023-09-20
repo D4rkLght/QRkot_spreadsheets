@@ -1,3 +1,4 @@
+![qrkot_spreadsheets_workflow](https://github.com/D4rkLght/QRkot_spreadsheets/actions/workflows/main.yml/badge.svg)
 # QRkot_spreadseets
 
 ## Оглавление

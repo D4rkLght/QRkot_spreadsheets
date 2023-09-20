@@ -5,7 +5,7 @@ from sqlalchemy import Boolean, Column, DateTime, Integer
 from app.core.db import Base
 
 
-class Parent_Base(Base):
+class ParentBase(Base):
     __abstract__ = True
 
     full_amount = Column(Integer)

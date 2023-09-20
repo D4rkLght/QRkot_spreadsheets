@@ -7,11 +7,11 @@ from app.core.config import NO_INVESTED
 from app.crud.charity_project import charityproject_crud
 from app.crud.donation import donation_crud
 from app.models.donation import Donation
-from app.models.parent_base import Parent_Base
+from app.models.parent_base import ParentBase
 
 
 def update(
-    model: Parent_Base,
+    model: ParentBase,
     amount: int
 ) -> None:
     model.invested_amount = (model.invested_amount or NO_INVESTED) + amount
@@ -21,9 +21,9 @@ def update(
 
 
 async def investments(
-    model: Parent_Base,
+    model: ParentBase,
     session: AsyncSession,
-) -> List[Optional[Parent_Base]]:
+) -> List[Optional[ParentBase]]:
     update_object = []
     crud = [donation_crud, charityproject_crud][isinstance(model, Donation)]
     for objects in await crud.get_objects(session):

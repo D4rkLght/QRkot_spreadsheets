@@ -24,8 +24,7 @@ class CRUDCharityProject(CRUDBase[
                 CharityProject.name == room_name
             )
         )
-        db_room_id = db_room_id.scalars().first()
-        return db_room_id
+        return db_room_id.scalars().first()
 
     async def get_projects_by_completion_rate(
             self,
